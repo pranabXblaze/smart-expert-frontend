@@ -15,7 +15,7 @@ function App() {
   return (
     <ThemeProvider defaultTheme="light" storageKey="drdo-theme">
       <Router>
-        <div className="min-h-screen dark:bg-[#59545bfb] bg-gray-200">
+        <div className="min-h-screen dark:bg-[#59545bfb] bg-gradient-to-br from-[#96addd] via-[#e5e7eb] to-[#174ebc]">
           <Navbar />
           <main className="container mx-auto px-4 py-8">
             <Routes>
