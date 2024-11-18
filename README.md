@@ -6,10 +6,3 @@ This is on development
 
 `git clone https://github.com/pranabXblaze/smart-expert-frontend`
 
-### install the node modules:
-
-`npm i`
-
-### Run on the localhost:
-
-`npm run dev`
