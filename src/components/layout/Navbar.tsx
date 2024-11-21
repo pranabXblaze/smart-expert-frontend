@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
-import { SignInButton, SignUpButton, SignedIn, SignedOut, UserButton} from '@clerk/clerk-react';
+// import { SignInButton, SignUpButton, SignedIn, SignedOut, UserButton} from '@clerk/clerk-react';
 import { ModeToggle } from '@/components/theme-toggle';
 import {
   NavigationMenu,
@@ -65,7 +65,7 @@ export default function Navbar() {
               <Link to="/login">Login</Link>
             </Button>
             */}
-              <header className='flex items-center space-x-4'>
+              {/* <header className='flex items-center space-x-4'>
       <SignedOut>
         <SignInButton >
           <Button variant={'outline'} >
@@ -81,7 +81,7 @@ export default function Navbar() {
       <SignedIn>
         <UserButton />
       </SignedIn>
-            </header>
+            </header> */}
           </div>
         </div>
       </div>
