@@ -1,15 +1,8 @@
 import { Link } from 'react-router-dom';
-import { Button } from '@/components/ui/button';
-// import { SignInButton, SignUpButton, SignedIn, SignedOut, UserButton} from '@clerk/clerk-react';
+import { Button } from '../ui/button';
 import { ModeToggle } from '@/components/theme-toggle';
-import {
-  NavigationMenu,
-  NavigationMenuContent,
-  NavigationMenuItem,
-  NavigationMenuList,
-  NavigationMenuTrigger,
-  NavigationMenuLink,
-} from '@/components/ui/navigation-menu';
+
+import {Menubar, MenubarItem, MenubarContent, MenubarMenu,MenubarTrigger, MenubarSeparator} from '@/components/ui/menubar';
 import { Users, UserPlus, Layout, ClipboardList } from 'lucide-react';
 
 export default function Navbar() {
@@ -22,66 +15,59 @@ export default function Navbar() {
             <span className="font-semibold text-lg">DRDO Expert Match</span>
           </Link>
 
-          <NavigationMenu>
-            <NavigationMenuList>
-              <NavigationMenuItem>
-                <NavigationMenuTrigger>Management</NavigationMenuTrigger>
-                <NavigationMenuContent>
-                  <div className="grid gap-3 p-4 w-[400px]">
-                    <NavigationMenuLink asChild>
-                      <Link to="/experts" className="flex items-center space-x-2 hover:bg-accent p-2 rounded-md">
+          <Menubar>
+            <MenubarMenu>
+              <MenubarTrigger>Mangement</MenubarTrigger>
+              <MenubarContent>
+                <MenubarItem>
+                <Link to="/experts" className="flex items-center space-x-2 hover:bg-accent p-2 rounded-md">
                         <Users className="h-4 w-4" />
-                        <span>Expert Management</span>
+                        <p>Expert Management</p>
                       </Link>
-                    </NavigationMenuLink>
-                    <NavigationMenuLink asChild>
-                      <Link to="/candidates" className="flex items-center space-x-2 hover:bg-accent p-2 rounded-md">
+                </MenubarItem>
+               <MenubarSeparator/>
+                <MenubarItem>
+                <Link to="/candidates" className="flex items-center space-x-2 hover:bg-accent p-2 rounded-md">
                         <UserPlus className="h-4 w-4" />
-                        <span>Candidate Management</span>
+                        <p>Candidate Management</p>
                       </Link>
-                    </NavigationMenuLink>
-                    <NavigationMenuLink asChild>
-                      <Link to="/boards" className="flex items-center space-x-2 hover:bg-accent p-2 rounded-md">
+                </MenubarItem>
+                <MenubarSeparator/>
+
+                <MenubarItem>
+                <Link to="/boards" className="flex items-center space-x-2 hover:bg-accent p-2 rounded-md">
                         <Layout className="h-4 w-4" />
-                        <span>Board Management</span>
+                        <p>Board Management</p>
                       </Link>
-                    </NavigationMenuLink>
-                  </div>
-                </NavigationMenuContent>
-              </NavigationMenuItem>
-              <NavigationMenuItem>
-                <NavigationMenuLink asChild>
-                  <Link to="/matching" className="group inline-flex h-10 w-max items-center justify-center rounded-md bg-background px-4 py-2 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50">
+                </MenubarItem>
+              </MenubarContent>
+            </MenubarMenu>
+            <MenubarMenu>
+              <MenubarTrigger>Matching System</MenubarTrigger>
+                <MenubarContent>
+                  <MenubarItem>
+                  <Link to="/matching" className="inline-flex h-10 w-max items-center justify-center rounded-md bg-background px-4 py-2 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50">
                     Matching System
                   </Link>
-                </NavigationMenuLink>
-              </NavigationMenuItem>
-            </NavigationMenuList>
-          </NavigationMenu>
+                  </MenubarItem>
+                  <MenubarItem>
+                  <Link to="/dashboard" className="inline-flex h-10 w-max items-center justify-center rounded-md bg-background px-4 py-2 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50">
+                    Dashboard
+                  </Link>
+                  </MenubarItem>
+                </MenubarContent>
+              </MenubarMenu>
+          </Menubar>
 
-          <div className="flex items-center space-x-4">
+          <div className="flex items-center gap-2">
             <ModeToggle />
-            {/* <Button asChild variant="outline">
+            <Button asChild variant={'link'}>
               <Link to="/login">Login</Link>
             </Button>
-            */}
-              {/* <header className='flex items-center space-x-4'>
-      <SignedOut>
-        <SignInButton >
-          <Button variant={'outline'} >
-            Sign In
-          </Button>
-        </SignInButton>
-        <SignUpButton>
-          <Button variant={'outline'} className='bg-[#646cff]'>
-          Register
-          </Button>
-          </SignUpButton>   
-      </SignedOut>
-      <SignedIn>
-        <UserButton />
-      </SignedIn>
-            </header> */}
+            <Button asChild variant="outline">
+              <Link to="/register">Register</Link>
+            </Button>
+             
           </div>
         </div>
       </div>

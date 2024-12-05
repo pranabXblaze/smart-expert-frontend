@@ -98,7 +98,7 @@ export default function Dashboard() {
       <div>
         <h2 className="text-3xl font-bold tracking-tight">Dashboard</h2>
   
-        <TextGenerateEffect words={words} duration={5} className='text-3xl text-border text-center' />
+        <TextGenerateEffect words={words} duration={5} className='text-3xl text-center' />
       </div>
 
       <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
