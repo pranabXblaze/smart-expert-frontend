@@ -9,3 +9,5 @@ This is on development
 ### Install the node modules :
 `npm install`
 
+### Run the server in development :
+`npm run dev`
