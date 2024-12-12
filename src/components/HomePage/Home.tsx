@@ -1,36 +1,20 @@
 import { Button } from "@/components/ui/button";
 import { ChevronDown, ExternalLink } from "lucide-react";
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom"
+import SlidingImages from "../Partners/Partners";
+
 export default function HomePage() {
   return (
     <div className="relative min-h-screen overflow-hidden bg-gradient-to-br from-[#0A2647] to-[#144272]">
       {/* Pattern Overlay */}
       <div
         className="absolute inset-0 opacity-10"
-        style={{
-          backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60'
-           xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.4'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
-        }}
       />
 
       <div className="container mx-auto px-4 py-12 relative z-10">
         {/* Logo */}
-        <motion.img
-          initial={{
-            opacity: 0,
-            y: -20,
-          }}
-          animate={{
-            opacity: 1,
-            y: 0,
-          }}
-          transition={{
-            duration: 0.5,
-          }}
-          src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/07/DRDO_Logo.png/240px-DRDO_Logo.png"
-          alt="DRDO Logo"
-          className="w-24 h-auto mb-16"
-        />
+
 
         <div className="flex flex-col lg:flex-row items-center max-w-7xl mx-auto">
           {/* Left Content */}
@@ -58,15 +42,27 @@ export default function HomePage() {
               Discover exciting opportunities in defense research, development,
               and innovation
             </p>
-            <Button
+            {/* <Button
               size="lg"
               style={{
-                backgroundColor: "#FF6B6B",
+                backgroundColor: "#FF",
               }}
               className="hover:bg-opacity-90 transition-all"
             >
-              Explore Opportunities
-              <ExternalLink className="ml-2 h-5 w-5" />
+
+              <Link to={'/search'}>Explore Opportunities</Link>
+              <ExternalLink className="ml-2 h-5 w-5"/>
+            </Button> */}
+            <Button
+              size="lg"
+              style={{
+                backgroundColor: "#FFF",
+              }}
+              className="hover:bg-opacity-90 transition-all"
+            >
+
+              <Link to={'/score'}>Find the experts</Link>
+              <ExternalLink className="ml-2 h-5 w-5"/>
             </Button>
           </motion.div>
 
@@ -113,6 +109,9 @@ export default function HomePage() {
           <p className="text-sm mb-2">Scroll Down</p>
           <ChevronDown className="w-6 h-6 mx-auto" />
         </motion.div>
+        <div className="h-1/2 my-2">
+          <SlidingImages />
+        </div>
       </div>
     </div>
   );
