@@ -41,7 +41,7 @@ export default function DRDOExpertConnect() {
     }
   };
 
-  const initiateConnect = async (expertId:String) => {
+  const initiateConnect = async (expertId) => {
     try {
       const response = await fetch('https://r0c8kgwocscg8gsokogwwsw4.zetaverse.one/db', {
         method: 'POST',
