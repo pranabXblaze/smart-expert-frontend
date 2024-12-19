@@ -11,7 +11,7 @@ import MatchingSystem from '@/components/matching/MatchingSystem';
 import Login from '@/components/auth/Login';
 import Register from '@/components/auth/Register';
 import Footer from './components/layout/Footer';
-import AdminDashboard from './components/search/search';
+
 import InterviewMatcher from './components/score/score';
 
 
@@ -23,7 +23,6 @@ function App() {
           <Navbar />
           <main className="container mx-auto px-4 py-8">
             <Routes>
-              <Route path='/search' element={<AdminDashboard/>}/>
               <Route path='/score' element= {<InterviewMatcher/>}/>
               <Route path="/" element={<HomePage />} />
               <Route path='/dashboard' element={<Dashboard />} key='dashboard'/>
